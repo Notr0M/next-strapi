@@ -57,7 +57,9 @@ class Index extends React.Component {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:1337/restaurants");
+  const res = await fetch(
+    "https://evening-plains-54066.herokuapp.com/restaurants"
+  );
   const restaurants = await res.json();
   // By returning { props: posts }, the Blog component
   // will receive `posts` as a prop at build time

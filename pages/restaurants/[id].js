@@ -13,10 +13,12 @@ export default function DynamicPage(props) {
 }
 
 export async function getStaticPaths() {
-  console.log("get path");
-  const res = await fetch("http://localhost:1337/restaurants");
+  //console.log("get path");
+  const res = await fetch(
+    "https://evening-plains-54066.herokuapp.com/restaurants"
+  );
   const restaurants = await res.json();
-
+  //console.log(restaurants);
   const paths = restaurants.map(
     (restaurant) => `/restaurants/${restaurant._id}`
   );
@@ -27,9 +29,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(arg) {
-  console.log("get static");
+  //console.log("get static");
   //console.log(arg);
-  const res = await fetch(`http://localhost:1337/restaurants/${arg.params.id}`);
+  const res = await fetch(
+    `https://evening-plains-54066.herokuapp.com/restaurants/${arg.params.id}`
+  );
   const restaurant = await res.json();
 
   // Pass post data to the page via props

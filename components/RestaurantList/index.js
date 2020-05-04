@@ -16,7 +16,7 @@ const RestaurantList = ({ restaurants, search }) => {
   //if (error) return "Error loading restaurants";
   //if restaurants are returned from the GraphQL query, run the filter query
   //and set equal to variable restaurantSearch
-
+  //console.log(restaurants);
   if (restaurants && restaurants.length) {
     //searchQuery
     const searchQuery = restaurants.filter((query) =>
@@ -35,7 +35,7 @@ const RestaurantList = ({ restaurants, search }) => {
                 <CardImg
                   top={true}
                   style={{ height: 250 }}
-                  src={`http://localhost:1337${res.image[0].url}`}
+                  src={`https://evening-plains-54066.herokuapp.com/${res.image}`}
                   alt={`${res.name}`}
                 />
                 <CardBody>

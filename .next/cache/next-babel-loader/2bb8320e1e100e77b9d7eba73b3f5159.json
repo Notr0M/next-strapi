@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from \"react\";\nexport default function Age(prop) {\n  console.log(prop);\n  return __jsx(React.Fragment, null, \"age\");\n}\nexport async function getStaticprops(params) {\n  console.log(params);\n  return {\n    params\n  };\n}","map":null,"metadata":{},"sourceType":"module"}
